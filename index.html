@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>personal profile</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/90489c8f29.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <div id="header">
@@ -41,13 +42,129 @@
                         I'm currently the Director of TECHNEG a social enterprise that is aimed at impacting every average Ghanaian and African with digital skills and streamlined Afrocentric technology, innovation, and entrepreneurial insights for Africans and the World.
                         </p>
                     <div class="tab-titles">
-                        <p class="tab-linkes">Skills</p>
-                        <p class="tab-linkes">Experence</p>
-                        <p class="tab-linkes">Education</p>
+                        <p class="tab-links active" onclick="opentab(event,'skills')">Skills</p>
+                        <p class="tab-links" onclick="opentab(event,'education')">Education</p>
+                        <p class="tab-links" onclick="opentab(event,'experence')">Experence</p>
+                    </div>
+                    <div class="tab-contents active"  id="skills">
+                        <ul>
+                            <li><span>UX/UI</span> <br>Designing web/App interfaces</li>
+                            <li><span>Web Development</span> <br>web/App Development</li>
+                            <li><span>App Development</span> <br>Android/Mobile Apps Development</li>
+                        </ul>
+
+                    </div>
+                    <div class="tab-contents" id="education">
+                        <ul>
+                            <li><span>2021 - current</span> <br>Information technology AAMUSTED</li>
+                            <li><span>2013 - 2016</span> <br>Deploma In Basic Education</li>
+                            <li><span>2004 - 2008</span> <br>Senior High School St. Teresa's</li>
+                        </ul>
+
+                    </div>
+                    <div class="tab-contents" id="experence">
+                        <ul>
+                            <li><span>2021 - current</span> <br>Student AAMUSTED</li>
+                            <li><span>2018 - date </span> <br>Teaching</li>
+                            <li><span>App Development</span> <br>Android/Mobile Apps Development</li>
+                        </ul>
+
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
+
+    <!-- ------------------- about me----------------------------- -->
+    <div id="services">
+
+        <div class="container">
+            <h1 class="sub-title">Services</h1>
+            <div class="list-services">
+                <div>
+                    <i class="fa-solid fa-code"></i>
+                    <h2>Web Design</h2>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, aliquid quod culpa eaque, veniam explicabo voluptatibus corporis modi fuga libero accusamus ducimus.</p>
+                    <a href="">Read more</a>
+                </div>
+                <div>
+                    <i class="fa-brands fa-uikit"></i>
+                    <h2>UX Ui</h2>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, aliquid quod culpa eaque, veniam explicabo voluptatibus corporis modi fuga libero accusamus ducimus.</p>
+                    <a href="">Read more</a>
+                </div>
+                <div>
+                    <i class="fa-brands fa-app-store-ios"></i>
+                    <h2>App Design</h2>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, aliquid quod culpa eaque, veniam explicabo voluptatibus corporis modi fuga libero accusamus ducimus.</p>
+                    <a href="">Read more</a>
+                </div>
+
+
+            </div>
+
+        </div>
+    </div>
+
+    <!-- ------------Portfolio----------- -->
+<div id="Portfolio">
+    <div class="container">
+        <h1 class="sub-title">My Work</h1>
+        <div class="work-list">
+            <div class="work">
+                <img src="images/IMG_8486.JPG" alt="" srcset="">
+            </div>
+            <div class="work">
+                <img src="images/IMG_8486.JPG" alt="" srcset="">
+            </div>
+            <div class="work">
+                <img src="images/IMG_8486.JPG" alt="" srcset="">
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+    <script>
+
+function opentab(evt, tabName) {
+  // Declare all variables
+  var i, tabcontent, tablinks;
+
+  // Get all elements with class="tabcontent" and hide them
+  tabcontent = document.getElementsByClassName("tab-contents");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+
+  // Get all elements with class="tablinks" and remove the class "active"
+  tablinks = document.getElementsByClassName("tab-links");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+
+  // Show the current tab, and add an "active" class to the button that opened the tab
+  document.getElementById(tabName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+        
+
+        // function opentab(tabname){
+        //     for ( tablink of tablinks) {
+        //         tablink.ClassList.remove("active-links");
+                
+        //     }
+
+        //     for ( tabcontent of tabcontents) {
+        //         tabcontent.ClassList.remove("active-tab");
+                
+        //     }
+        //     event.currentTarget.ClassList.add("active-links");
+        //     document.getElementById(tabname).classList.add("active-tab");
+        // }
+
+    </script>
 </body>
 </html>

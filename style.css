@@ -12,7 +12,7 @@ body{
 #header{
     width: 100%;
     height: 100vh;
-    background-image: url(images/IMG_8486.JPG);
+    background-image: url(images/background.jpg);
     background-size: cover;
     background-position: center;
 }
@@ -51,7 +51,7 @@ nav ul li a::after{
     position: absolute;
     left: 0;
     bottom: -6px;
-    transition: 5s;
+    transition: 0.5s;
 }
 nav ul li a:hover::after{
     width: 100%;
@@ -98,7 +98,83 @@ nav ul li a:hover::after{
     display: flex;
     margin: 20px 0 40px;
 }
-.tab-linkes{
+.tab-links{
     margin-right: 50px;
     font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    position: relative;
+}
+.tab-links::after{
+    content: '';
+    width: 0;
+    height: 3px;
+    background: #ff004f;
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    transition: 0.5s;
+
+}
+
+.tab-links.active::after{
+    width: 50%;
+}
+.tab-contents ul li{
+    list-style: none;
+    margin: 10px 0;
+}
+.tab-contents ul li span{
+    color: #fa1b62d5;
+    font-size: 14px;
+}
+.tab-contents{
+    display: none;
+}
+.tab-contents.active{
+    display: block;
+}
+
+#services{
+    padding: 30px 0;
+}
+.list-services{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr) );
+    row-gap: 40px;
+    grid-gap: 40px;
+    margin-top: 50px;
+}
+.list-services div{
+    background: #262626;
+    padding: 20px;
+    font-size: 13px;
+    font-weight: 300;
+    border-radius: 10px;
+    transition: background 0.5s, transform 0.5s;
+}
+.list-services div i{
+    font-size: 50px;
+    margin-bottom: 30px;
+}
+.list-services div h2{
+    font-size: 30px;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+.list-services div a{
+    flex-direction: none;
+    color: #fff;
+    font-size: 12px;
+    margin-top: 20px;
+    display: inline-block;
+}
+.list-services div:hover{
+    background-color: #ff004f;
+    transform: translateY(-10px); 
+}
+/* -----------------portfolio------------ */
+
+#Portfolio{
+    padding: 50px 0;
 }

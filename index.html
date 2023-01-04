@@ -11,16 +11,17 @@
 <body>
     <div id="header">
         <div class="container">
-            <nav >
+            <nav id="sidemenu" >
                 <img src="images/logo.JPG" alt="" srcset="" class="logo">
                 <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Service</a></li>
-                    <li><a href="#">Portfolio</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li><a href="#header">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Service</a></li>
+                    <li><a href="#Portfolio">Portfolio</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <i class="fa-solid fa-circle-xmark" onclick="closemenu()" ></i>
                 </ul>
-
+                <i class="fa-solid fa-bars" onclick="openmenu()" ></i>
             </nav>
             <div class="header-text">
                 <p>Web Developer</p>
@@ -37,7 +38,7 @@
                 </div>
                 <div class="about-col-row-2">
                     <h1 class="sub-title">About Me</h1>
-                    <p>I am a tech enthusiast and focused on helping Africans make a mindful transition into technology and digital innovation.
+                    <p id="txt">I am a tech enthusiast and focused on helping Africans make a mindful transition into technology and digital innovation.
                         My professional life is working in education and within the Startup Ecosystem, where my work focuses on building capacity and strategic alignment for business growth. I have gained experience from working with companies such as GES | GIFEC | GIZ and other organizations.
                         I'm currently the Director of TECHNEG a social enterprise that is aimed at impacting every average Ghanaian and African with digital skills and streamlined Afrocentric technology, innovation, and entrepreneurial insights for Africans and the World.
                         </p>
@@ -76,7 +77,7 @@
     </div>
 
 
-    <!-- ------------------- about me----------------------------- -->
+    <!-- ------------------- services----------------------------- -->
     <div id="services">
 
         <div class="container">
@@ -114,20 +115,70 @@
         <div class="work-list">
             <div class="work">
                 <img src="images/IMG_8486.JPG" alt="" srcset="">
+                <div class="layer">
+                    <h3>Social media</h3>
+                    <p>This an app created for an organisation</p>
+                    <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
             </div>
             <div class="work">
                 <img src="images/IMG_8486.JPG" alt="" srcset="">
+                <div class="layer">
+                    <h3>Social media</h3>
+                    <p>This an app created for an organisation</p>
+                    <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
             </div>
             <div class="work">
                 <img src="images/IMG_8486.JPG" alt="" srcset="">
+                <div class="layer">
+                    <h3>Online shop</h3>
+                    <p>This an app created for an organisation</p>
+                    <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
             </div>
         </div>
+        <a href="#" class="btn">See more</a>
 
     </div>
 </div>
 
+<!-- ----------------------contact---------------- -->
+<div id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="left-contact">
+                <h1 class="sub-title">Contact Me</h1>
+                <p><i class="fa-solid fa-paper-plane"></i> sixtus99@gmail.com</p>
+                <p><i class="fa-solid fa-phone"></i> +233246460176</p>
+                <div class="socialicons">
+                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-github"></i></i></a>
+                </div>
+                <a href="images/logo.JPG" download class="btn btn2">Download CV</a>
 
-    <script>
+            </div>
+            <div class="right-contact">
+                <form name="submit-to-google-sheet">
+                    <input type="text" name="Name" placeholder="Your Name" required>
+                    <input type="email" name="Email" placeholder="Your Email" required>
+                    <textarea name="Message" rows="6" placeholder="Your message"></textarea>
+                    <button type="submit" class="btn btn2">Submit</button>
+                </form>
+                <span id="msg"></span>
+            </div>
+        </div>
+
+    </div>
+    <div class="copyright">
+        <p>copyright © Samuel <i class="fa-solid fa-heart"></i></p>
+    </div>
+</div>
+
+
+<script>
 
 function opentab(evt, tabName) {
   // Declare all variables
@@ -166,5 +217,41 @@ function opentab(evt, tabName) {
         // }
 
     </script>
+    <script>
+        /* Set the width of the side navigation to 250px */
+// function openmenu() {
+//   document.getElementById("sidemenu").style.width = "0";
+// }
+
+// /* Set the width of the side navigation to 0 */
+// function closemenu() {
+//   document.getElementById("sidemenu").style.width = "-200px";
+// }
+
+        //var sidemenus = document.getElementById("sidemenu");
+        function openmenu(){
+            document.getElementById("sidemenu").style.width = "0"; 
+        }
+        function closemenu(){
+            document.getElementById("sidemenu").style.width = "-200px"; 
+        }
+    </script>
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbxi3ZZNlra0LR4Po_O4aGUu-vtBKXu4AC4hlSlVhq2TwcOy8n05y2xtx75giv2lf7M6/exec'
+        const form = document.forms['submit-to-google-sheet']
+      
+        form.addEventListener('submit', e => {
+          e.preventDefault()
+          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => {
+                msg.innerHTML = "Message sent sussfully"
+                setTimeout(function(){
+                    msg.innerHTML = ""
+                },5000)
+                form.reset()
+            })
+            .catch(error => console.error('Error!', error.message))
+        })
+      </script>
 </body>
 </html>

@@ -350,7 +350,7 @@ nav .fa-solid{
         position: fixed;
         top: 0;
         right: 0;
-        width: 200px;
+        width: 0;
         height: 100%;
         overflow-x: hidden;
         padding-top: 50px;

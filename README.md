@@ -1,1 +1,1 @@
-# luchyba.guthub.io
+# luchyba.github.io

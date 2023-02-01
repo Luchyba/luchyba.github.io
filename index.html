@@ -11,9 +11,9 @@
 <body>
     <div id="header">
         <div class="container">
-            <nav id="sidemenu" >
+            <nav >
                 <img src="images/logo.JPG" alt="" srcset="" class="logo">
-                <ul>
+                <ul id="sidemenu">
                     <li><a href="#header">Home</a></li>
                     <li><a href="#about">About</a></li>
                     <li><a href="#services">Service</a></li>
@@ -229,12 +229,25 @@ function opentab(evt, tabName) {
 // }
 
         //var sidemenus = document.getElementById("sidemenu");
-        function openmenu(){
-            document.getElementById("sidemenu").style.width = "200px"; 
+        /*function openmenu(){
+            document.getElementById("sidemenu").style.width = "0";
+            //document.getElementById("sidemenu").classList.add("active");
+            // document.getElementById("sidemenu").style.right = "0"; 
         }
         function closemenu(){
-            document.getElementById("sidemenu").style.width = "0"; 
-        }
+            document.getElementById("sidemenu").style.width = "-200px"; 
+            //document.getElementById("sidemenu").classList.remove("active");
+            // document.getElementById("sidemenu").style.right = "-200px";
+        }*/
+        function openmenu() {
+  //document.getElementById("sidemenu").style.width = "200px";
+  document.getElementById("sidemenu").style.right = "0";
+}
+
+/* Set the width of the side navigation to 0 */
+function closemenu() {
+  document.getElementById("sidemenu").style.right = "-200px";
+}
     </script>
     <script>
         const scriptURL = 'https://script.google.com/macros/s/AKfycbxi3ZZNlra0LR4Po_O4aGUu-vtBKXu4AC4hlSlVhq2TwcOy8n05y2xtx75giv2lf7M6/exec'
